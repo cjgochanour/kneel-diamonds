@@ -52,7 +52,7 @@ export const getOrders = () => {
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id;
 };
-export const seetSize = (id) => {
+export const setSize = (id) => {
     database.orderBuilder.sizeId = id;
 };
 export const setStyle = (id) => {
