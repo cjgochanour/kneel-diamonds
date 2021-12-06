@@ -9,7 +9,7 @@ document.addEventListener("change", (event) => {
 });
 
 export const JewelryStyles = () => {
-    let html = "<ul>";
+    let html = `<ul>`;
 
     const listItems = styles.map((style) => {
         return `<li>
