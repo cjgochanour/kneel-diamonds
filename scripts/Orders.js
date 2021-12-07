@@ -1,4 +1,4 @@
-import { getOrders, getMetals, getSizes, getStyles, getType } from "./database.js";
+import { getOrders, getMetals, getSizes, getStyles, getType } from "./dataAccess.js";
 
 export const buildOrderListItem = (order) => {
     const metals = getMetals();
@@ -6,15 +6,9 @@ export const buildOrderListItem = (order) => {
     const styles = getStyles();
     const types = getType();
 
-    const foundMetal = metals.find((metal) => {
-        return metal.id === order.metalId;
-    });
-    const foundSize = sizes.find((size) => {
-        return size.id === order.sizeId;
-    });
-    const foundStyle = styles.find((style) => {
-        return style.id === order.styleId;
-    });
+    const foundMetal = metals.find((metal) => metal.id === order.metalId);
+    const foundSize = sizes.find((size) => size.id === order.sizeId);
+    const foundStyle = styles.find((style) => style.id === order.styleId);
     const foundType = types.find((type) => type.id === order.typeId);
     const totalCost = (foundMetal.price + foundSize.price + foundStyle.price) * foundType.price;
 

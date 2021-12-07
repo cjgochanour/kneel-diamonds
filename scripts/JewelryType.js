@@ -1,4 +1,4 @@
-import { getOrderBuilder, getType, setType } from "./database.js";
+import { getOrderBuilder, getType, setType } from "./dataAccess.js";
 
 const Types = getType();
 
@@ -11,7 +11,7 @@ document.addEventListener("change", (event) => {
 
 export const JewelryType = () => {
     const currentOrder = getOrderBuilder();
-    let typeHTML = `<ul class="JewelryType">`;
+    let html = `<ul class="JewelryType">`;
 
     let typesList = Types.map((type) => {
         if (type.id === currentOrder.typeId) {
@@ -24,9 +24,8 @@ export const JewelryType = () => {
     </li></div>`;
     });
 
-    typeHTML += typesList.join("");
+    html += typesList.join("");
+    html += "</ul>";
 
-    typeHTML += "</ul>";
-
-    return typeHTML;
+    return html;
 };

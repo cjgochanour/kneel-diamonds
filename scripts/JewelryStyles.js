@@ -1,4 +1,4 @@
-import { getStyles, setStyle, getOrderBuilder } from "./database.js";
+import { getStyles, setStyle, getOrderBuilder } from "./dataAccess.js";
 
 const styles = getStyles();
 
@@ -25,7 +25,6 @@ export const JewelryStyles = () => {
     });
 
     html += listItems.join("");
-
     html += "</ul>";
 
     return html;

@@ -1,4 +1,4 @@
-import { getSizes, setSize, getOrderBuilder } from "./database.js";
+import { getSizes, setSize, getOrderBuilder } from "./dataAccess.js";
 
 const sizes = getSizes();
 
@@ -13,7 +13,6 @@ export const DiamondSizes = () => {
     const order = getOrderBuilder();
     let html = "<ul>";
 
-    // Use .map() for converting objects to <li> elements
     const listItems = sizes.map((size) => {
         if (size.id === order.sizeId) {
             return `<li>

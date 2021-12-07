@@ -2,14 +2,10 @@ import { DiamondSizes } from "./DiamondSizes.js";
 import { JewelryStyles } from "./JewelryStyles.js";
 import { Metals } from "./Metals.js";
 import { Orders } from "./Orders.js";
-import { addCustomOrder } from "./database.js";
+import { addCustomOrder } from "./dataAccess.js";
 import { JewelryType } from "./JewelryType.js";
 
-document.addEventListener("click", (event) => {
-    if (event.target.id === "orderButton") {
-        addCustomOrder();
-    }
-});
+document.addEventListener("click", (event) => (event.target.id === "orderButton" ? addCustomOrder() : null));
 
 export const KneelDiamonds = () => {
     return `

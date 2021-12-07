@@ -1,4 +1,4 @@
-import { getMetals, setMetal, getOrderBuilder } from "./database.js";
+import { getMetals, setMetal, getOrderBuilder } from "./dataAccess.js";
 
 const metals = getMetals();
 
@@ -13,7 +13,6 @@ export const Metals = () => {
     const currentOrder = getOrderBuilder();
     let html = "<ul>";
 
-    // This is how you have been converting objects to <li> elements
     for (const metal of metals) {
         if (metal.id === currentOrder.metalId) {
             html += `<li>
