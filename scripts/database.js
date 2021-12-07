@@ -58,6 +58,9 @@ export const getOrders = () => {
 export const getType = () => {
     return database.types.map((type) => ({ ...type }));
 };
+export let getOrderBuilder = () => {
+    return database.orderBuilder;
+};
 export const setMetal = (id) => {
     database.orderBuilder.metalId = id;
 };

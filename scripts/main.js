@@ -8,6 +8,4 @@ const renderAllHTML = () => {
 
 renderAllHTML();
 
-document.addEventListener("stateChanged", (event) => {
-    renderAllHTML();
-});
+document.addEventListener("stateChanged", () => renderAllHTML());
